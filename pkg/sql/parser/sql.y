@@ -3301,13 +3301,14 @@ show_columns_stmt:
 
 // %Help: SHOW DATABASES - list databases
 // %Category: DDL
-// %Text: SHOW DATABASES
+// %Text: SHOW DATABASES [WITH COMMENTS]
 // %SeeAlso: WEBDOCS/show-databases.html
 show_databases_stmt:
   SHOW DATABASES
   {
     $$.val = &tree.ShowDatabases{}
   }
+| SHOW DATABASES WITH COMMENTS
 | SHOW DATABASES error // SHOW HELP: SHOW DATABASES
 
 // %Help: SHOW GRANTS - list grants
